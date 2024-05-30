@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="container">
+            <h1>Nikhil Neupane</h1>
+            <input type="checkbox" id="navToggle" class="hidden-checkbox">
+            <label for="navToggle" id="menuIcon">&#9776;</label>
+            <nav class="show-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="internship.html">Internship</a></li>
+                    <li class="scenario-dropdown">
+                        <a href="#">Scenario</a>
+                        <ul class="dropdown-content">
+                            <li><a href="project-show.html">Project</a></li>
+                            <li><a href="about-me.html">About Me</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container-contact">
+        <h1 class="page-header">Contact Me</h1>
+        <hr class="skill-hr">
+        <div class="contact-info">
+            <p class="contact-p">Feel free to contact me via email or social media:</p>
+            <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+            <p>Social Media: 
+                <a href="https://www.linkedin.com/in/yourname" target="_blank">LinkedIn</a> | 
+                <a href="https://twitter.com/yourname" target="_blank">Twitter</a> | 
+                <a href="https://github.com/yourname" target="_blank">GitHub</a>
+            </p>
+        </div>
+        
+        <h2>Send Me a Message</h2>
+        <form id="contactForm" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+            <div id="errorMessage" class="error"></div>
+            <div id="successMessage" class="success"></div>
+        </form>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        // JavaScript for form submission handling
+        const contactForm = document.getElementById('contactForm');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Validate form inputs
+            const name = contactForm.elements['name'].value.trim();
+            const email = contactForm.elements['email'].value.trim();
+            const message = contactForm.elements['message'].value.trim();
+
+            if (!name || !email || !message) {
+                errorMessage.textContent = 'Please fill in all fields.';
+                successMessage.textContent = ''; // Clear success message
+                return;
+            }
+
+            // Additional validation, e.g., email format
+
+            // Simulate form submission (replace with actual submission logic)
+            setTimeout(function() {
+                successMessage.textContent = 'Your message has been sent successfully.';
+                errorMessage.textContent = ''; // Clear error message
+                contactForm.reset(); // Reset form inputs
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
